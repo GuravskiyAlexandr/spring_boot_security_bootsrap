@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/").authenticated()// доступность всем
                 .antMatchers("/")
-                .access("hasAnyRole('ROLE_USER')")
+                .access("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
                 .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
                 .and()
                 .formLogin().loginPage("/login")// Spring сам подставит свою логин форму
